@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import City from "./city";
 
 class CityList extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+
   render() {
     return (
       <div>
-        <City />
+        <City data={this.props.data}/>
       </div>
     );
   }

@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 
 class CityInfo extends Component {
+
   render() {
+    console.log("page info", this.props.data[0].title)
+
     return (
-      <h1>Info About The City</h1>
+      <h1>{this.props.data[0].title}</h1>
     );
   }
 }
