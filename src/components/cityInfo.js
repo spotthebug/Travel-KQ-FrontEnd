@@ -3,10 +3,13 @@ import React, { Component } from "react";
 class CityInfo extends Component {
 
   render() {
-    console.log("page info", this.props.data[0].title)
-
+    console.log("hiiiiii", this.props.data)
     return (
-      <h1>{this.props.data[0].title}</h1>
+      <div>
+      {this.props.data.map(each =>
+        <h2 className="title" id={each.id} style={{display: 'none'}} key={each.id}>{each.title}</h2>
+      )}
+      </div>
     );
   }
 }

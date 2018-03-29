@@ -4,9 +4,6 @@ import PostAddButton from './postAddButton';
 import PostList from './postList';
 
 class CityPage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     console.log("City Page", this.props.data)
@@ -18,6 +15,7 @@ class CityPage extends Component {
       </div>
     );
   }
+
 }
 
 export default CityPage;

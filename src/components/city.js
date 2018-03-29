@@ -3,17 +3,22 @@ import React, { Component } from "react";
 class City extends Component {
   constructor(props) {
     super(props);
+
+    this.showCity = this.showCity.bind(this);
   }
 
+  showCity() {
+    this.props.show(this.props.city.id);
+  }
+
+
   render() {
-    console.log("hello!", this.props)
     return (
       <div>
-      <ul>
-        {this.props.data.map(data =>
-          <li class="cityListItem" key={data.id}>{data.title}</li>
-        )}
-      </ul>
+        <li className="cityListItem" key={this.props.city.id}>
+          {this.props.city.title}
+          <button onClick={this.showCity}>show city</button>
+        </li>
       </div>
     );
   }
