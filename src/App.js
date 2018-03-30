@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Header from './components/Header'
-import './index.css'
-import Carousel from './components/Carousel';
+import './materialize/css/materialize.css';
+import Home from './components/Home';
+import MyRoutes from './config/routes'
 
 class App extends Component {
+
   render() {
+
     return (
       <div className="App">
-      <Header />
-      <Carousel />
+        <Home />
+        { MyRoutes }
+
       </div>
     );
   }

@@ -1,17 +1,52 @@
-.navbar {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin-left: 5em;
+}
+.nav-wrapper {
+  margin-top: 0em;
   background-color: black;
 }
 
-#title  {
-  margin-left: 4em;
-  margin-right: 31em;
-}
-
-.navbar li {
-  display: inline-block;
-  margin-right: 3em;
-}
-
-.navbar a {
+.nav-wrapper a {
   color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+.nav-wrapper ul li a {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+#nav-mobile {
+  display: none;
+}
+
+.sf {
+  width: 100%;
+  height:40em;
+}
+
+.articlesList {
+  margin-top: 3em;
+}
+
+.articlesList h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+.about h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+}
+
+.modal {
+  z-index: 200;
 }
