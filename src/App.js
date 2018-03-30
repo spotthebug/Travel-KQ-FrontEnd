@@ -9,12 +9,15 @@ class App extends Component {
     return (
       <div>
         <nav>
-          <Link to=""></Link>
-          <Link to=""></Link>
+          <a>Wayfarer</a>
+          <Link to="/cities">Cities</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/search">Search</Link>
         </nav>
         <main>
-          <Route path="" render={<CitiesDisplay />}/>
-          <Route path="" render={<ProfilePage />}/>
+          <Route path="/cities" render={() => (<CitiesDisplay />)}/>
+          <Route path="/profile" render={() => (<ProfilePage />)}/>
         </main>
       </div>
     )
