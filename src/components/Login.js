@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../materialize/css/materialize.css';
 
 class Login extends Component {
   constructor() {

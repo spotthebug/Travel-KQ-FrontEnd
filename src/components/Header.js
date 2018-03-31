@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
-import '../materialize/css/materialize.css';
+import { Navbar, NavItem, Nav } from 'react-bootstrap';
 
 class Header extends Component {
 
   render() {
     return(
-      <nav>
-        <div className="nav-wrapper">
-          <a href="www.google.com" className="brand-logo">Logo</a>
-          <ul className=" hide-on-med-and-down">
-            <li className="left title"><a href="/home">Wayfarer</a></li>
-            <li className=" right"><a href="/signup" data-target="modal1">Sign Up</a></li>
-            <li className=" right"><a href="/login" data-target="modal1">Login</a></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar inverse collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#brand">Wayfarer</a>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1} href="/">Home</NavItem>
+        </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="/login">
+            Login
+          </NavItem>
+          <NavItem eventKey={2} href="/signup" >
+            SignUp
+          </NavItem>
+        </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       );
   }
 }
