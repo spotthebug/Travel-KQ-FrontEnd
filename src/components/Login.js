@@ -1,53 +1,57 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
-class Login extends Component {
-  constructor() {
-    super()
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+
     this.state = {
       email: "",
       password: ""
     };
   }
 
-handleChange = event => {
-  this.setState({
-    [event.target.id]: event.target.value
-  });
-}
-
-handleSubmit = event => {
-  event.preventDefault();
-}
-
-  render() {
-    return(
-
-      <div className="row">
-      <form className="col s12" onSubmit={this.handleSubmit}>
-
-        <div className="row">
-          <div className="input-field col s12">
-            <label>Email</label>
-            <input id="email" type="email" className="validate" value={this.state.email} onChange={this.handleChange} />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="input-field col s12">
-            <label>Password</label>
-            <input id="password" type="password" className="validate" value={this.state.password} onChange={this.handleChange} />
-          </div>
-        </div>
-        <button className="btn waves-effect waves-light" type="submit" name="action">Login
-        </button>
-      </form>
-      </div>
-
-
-      )
-
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
-}
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
 
-export default Login;
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="Login">
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup controlId="email" bsSize="large">
+            <ControlLabel>Email</ControlLabel>
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+          <Button bsStyle="primary" block bsSize="large" disabled={!this.validateForm()} type="submit"
+          >
+            Login
+          </Button>
+        </form>
+      </div>
+    );
+  }
+}

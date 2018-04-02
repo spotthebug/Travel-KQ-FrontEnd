@@ -19,9 +19,9 @@ class ImageCarousel extends Component {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className="image-sizing" alt="Whale Splashing" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4447cdaa92325a8040472b6e33da135b&auto=format&fit=crop&w=1050&q=80" />
+          <img className="image-sizing" alt="Frozen Waterfall" src="https://images.unsplash.com/photo-1506269351850-0428eaed2193?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a1512d7659e4817df8217cdb9aa09d7a&auto=format&fit=crop&w=1050&q=80" />
           <Carousel.Caption>
-            <h3>Whale Spotting at Maui</h3>
+            <h3>Frozen Waterfall</h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

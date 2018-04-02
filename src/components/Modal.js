@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
 import { Modal, Button } from 'react-bootstrap';
-
+import '../index.css';
 
 class ModalDisplay extends Component {
   constructor(props, context) {
