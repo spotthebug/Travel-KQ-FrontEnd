@@ -26,8 +26,12 @@ class CitiesDisplay extends Component {
     if (this.state.cities.length !== 0) {
       return (
         <div className="citiesdisplay">
-          <CitiesList cities={this.state.cities} show={this.show}/>
-          <CityPage data={this.state.cities} />
+          <div className="sidebar">
+            <CitiesList cities={this.state.cities} show={this.show}/>
+          </div>
+          <div className="cityPage">
+            <CityPage data={this.state.cities} />
+          </div>
         </div>
       );
     } else {
@@ -37,9 +41,7 @@ class CitiesDisplay extends Component {
 
   show(id) {
     let showitem = document.getElementById(id)
-    console.log(showitem)
     let hide = document.querySelectorAll('.title')
-    console.log("HIDE", hide)
     hide.forEach(item => {
       item.style.display = "none"
     });
