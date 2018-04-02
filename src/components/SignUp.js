@@ -6,13 +6,15 @@ import {
   ControlLabel,
   Button
 } from "react-bootstrap";
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
+      username: "",
       email: "",
       password: ""
     };
@@ -33,17 +35,23 @@ class SignUp extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    let username = this.state.username
+    let email = this.state.email
+    let password = this.state.password
+
+    axios.post('https://travel-kingqueens.herokuapp.com/register', { username, email, password}).then((result) => {
+      console.log("Successful!");
+    });
   }
 
   renderForm() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <FormGroup controlId="name" bsSize="large">
-          <ControlLabel>Name</ControlLabel>
+        <FormGroup controlId="username" bsSize="large">
+          <ControlLabel>Username</ControlLabel>
           <FormControl
             autoFocus
             type="text"
-            value={this.state.name}
             onChange={this.handleChange}
           />
         </FormGroup>
@@ -52,14 +60,12 @@ class SignUp extends Component {
           <FormControl
             autoFocus
             type="email"
-            value={this.state.email}
             onChange={this.handleChange}
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
           <ControlLabel>Password</ControlLabel>
           <FormControl
-            value={this.state.password}
             onChange={this.handleChange}
             type="password"
           />
