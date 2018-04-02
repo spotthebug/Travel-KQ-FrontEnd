@@ -5,11 +5,11 @@ class CityPostList extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <div>
           {this.props.data.map(cityPost =>
             <CityPost citypost={cityPost}/>
           )}
-        </ul>
+        </div>
       </div>
     );
   }

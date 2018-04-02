@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './cityinfo.css';
 
 class CityInfo extends Component {
 

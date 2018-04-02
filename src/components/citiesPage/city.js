@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './city.css';
 
 class City extends Component {
   constructor(props) {
@@ -14,12 +15,7 @@ class City extends Component {
 
   render() {
     return (
-      <div>
-        <li className="cityListItem" key={this.props.city.id}>
-          {this.props.city.title}
-          <button onClick={this.showCity}>show city</button>
-        </li>
-      </div>
+      <button className="cityListItem" key={this.props.city.id} onClick={this.showCity}>{this.props.city.title}</button>
     );
   }
 }
