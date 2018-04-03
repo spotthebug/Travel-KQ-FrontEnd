@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CityInfo from './cityInfo';
-import PostAddButton from './postAddButton';
+import NewPostModal from './newPostModal';
 import CityPostList from './cityPostList';
 
 class CityPage extends Component {
@@ -10,7 +10,7 @@ class CityPage extends Component {
     return (
       <div>
         <CityInfo data={this.props.data}/>
-        <PostAddButton data={this.props.data}/>
+        <NewPostModal data={this.props.data}/>
         <CityPostList data={this.props.data}/>
       </div>
     );

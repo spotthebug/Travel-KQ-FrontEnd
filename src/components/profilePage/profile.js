@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import UserPostList from './userPostList';
+import Header from '../Header';
 
 class Profile extends Component {
   constructor(props) {

@@ -36,9 +36,6 @@ class ModalDisplay extends Component {
           <Modal.Body>
             <h2> Sign Up </h2>
             <SignUp />
-            <hr />
-            <h2> Login </h2>
-            <Login />
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
@@ -48,7 +45,5 @@ class ModalDisplay extends Component {
     );
   }
 }
-
-
 
 export default ModalDisplay;

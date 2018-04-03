@@ -7,7 +7,6 @@ import {
   Button
 } from "react-bootstrap";
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor(props) {
@@ -39,9 +38,9 @@ class SignUp extends Component {
     let email = this.state.email
     let password = this.state.password
 
-    axios.post('https://travel-kingqueens.herokuapp.com/register', { username, email, password}).then((result) => {
-      console.log("Successful!");
-    });
+    axios.post('https://travel-kingqueens.herokuapp.com/register', { username, email, password}).then((response) => {
+        alert("Sign up successful!")
+    })
   }
 
   renderForm() {
