@@ -6,8 +6,8 @@ class UserPostList extends Component {
     return(
       <div>
         <ul>
-          {this.props.dogs.dogs.map(dog =>
-            <UserPost dogs={dog}/>
+          {this.props.posts.posts.map(post =>
+            <UserPost posts={post}/>
           )}
         </ul>
       </div>

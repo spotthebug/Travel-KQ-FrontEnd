@@ -1,0 +1,21 @@
+.postAddButton  {
+  display: flex;
+  margin: 1em 0;
+  align-items: center;
+  padding-top: 1.5em;
+}
+
+.postAddButton p {
+  font-size: 1.5em;
+  font-weight: 500;
+  padding-right: .8em;
+  text-transform: uppercase;
+}
+
+.postAddButton button {
+  border: .07em solid black;
+  font-size: 3em;
+  text-align: center;
+  padding: 0 .37em;
+  border-radius: 2.5em;
+}

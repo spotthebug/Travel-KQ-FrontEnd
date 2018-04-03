@@ -6,8 +6,8 @@ class CityPostList extends Component {
     return (
       <div>
         <div>
-          {this.props.data.map(cityPost =>
-            <CityPost citypost={cityPost}/>
+          {this.props.posts.map(post =>
+            <CityPost posts={post}/>
           )}
         </div>
       </div>

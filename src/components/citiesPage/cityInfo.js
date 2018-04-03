@@ -1,14 +1,25 @@
 import React, { Component } from "react";
 import './cityinfo.css';
+import PostAddButton from "./postAddButton";
 
 class CityInfo extends Component {
 
   render() {
-    console.log("hiiiiii", this.props.data)
     return (
       <div>
-      {this.props.data.map(each =>
-        <h2 className="title" id={each.id} style={{display: 'none'}} key={each.id}>{each.title}</h2>
+      {this.props.cities.map(each =>
+        <div id={each._id} className="cityInfo" key={each._id}>
+          <div className="country">
+            <h2 className="title">{each.name}</h2>
+            <h3 className="countryName">Country</h3>
+            <div className="postAddButton" id={each._id}>
+            < PostAddButton cityId={each._id} />
+            </div>
+          </div>
+          <div className="imageDiv">
+            <img src={each.image_url} />
+          </div>
+        </div>
       )}
       </div>
     );

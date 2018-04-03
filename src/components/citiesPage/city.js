@@ -9,13 +9,13 @@ class City extends Component {
   }
 
   showCity() {
-    this.props.show(this.props.city.id);
+    this.props.show(this.props.city._id);
   }
 
 
   render() {
     return (
-      <button className="cityListItem" key={this.props.city.id} onClick={this.showCity}>{this.props.city.title}</button>
+      <button className="cityListItem" key={this.props.city._id} onClick={this.showCity}>{this.props.city.name}</button>
     );
   }
 }
