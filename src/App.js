@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import './header.css';
-import CitiesDisplay from './components/citiesPage/citiesDisplay';
 import ProfilePage from './components/profilePage/profile';
+import CitiesDisplay from './components/citiesDisplay';
+import Home from './components/Home';
+import MyRoutes from './config/routes'
 
 class App extends Component {
+
   render() {
-    return (
-      <div>
-        <nav>
-          <a className="logo">WAYFARER</a>
+
+    return (  
+       <div className="App">
+          <Home />
+          { MyRoutes }
+          <CitiesDisplay />
+          <nav>
+          <a class="logo">WAYFARER</a>
           <Link to="/cities">cities</Link>
           <Link to="/profile">profile</Link>
           <Link to="/login">login</Link>
@@ -27,3 +34,7 @@ class App extends Component {
 
 
 export default App;
+
+
+
+
