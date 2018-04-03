@@ -1,22 +1,23 @@
 nav {
   display: flex;
-  width: 100%;
-  background: rgb(150,140,255);
+  margin: 1em;
+  border-bottom: .1em solid black;
+  align-items: flex-end;
 }
 
 a {
-  padding: 1em;
+  padding: .5em 1em;
   text-decoration: none;
-  color: white;
-  font-family: futura;
+  color: black;
+  font-weight: 500;
+  font-family: raleway;
   letter-spacing: .1em;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
-.log {
-  justify-self: end;
-}
-
-.navtitle {
-  justify-self: start;
+.logo {
+  font-size: 1.7em;
+  font-weight: 700;
+  padding: .5em 2em;
+  color: rgb(50,200,200)
 }

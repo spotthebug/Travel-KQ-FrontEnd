@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import '../index.css';
 import ArticlesList from './ArticlesList';
 import ImageCarousel from './Carousel';
-import ModalDisplay from './Modal'
+import ModalDisplay from './Modal';
+import Header from './Header';
 
 
 class Home extends Component {
