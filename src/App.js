@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import ProfilePage from './components/profilePage/profile';
-import CitiesDisplay from './components/citiesDisplay';
+import CitiesDisplay from './components/citiesPage/citiesDisplay';
 import Home from './components/Home';
 import MyRoutes from './config/routes'
+import {
+    Redirect,
+    Route,
+    Link,
+    Switch
+} from 'react-router-dom';
 
 class App extends Component {
 
   render() {
 
     return (
-        
+
        <div className="App">
           <Home />
           { MyRoutes }
@@ -33,7 +39,3 @@ class App extends Component {
 
 
 export default App;
-
-
-
-
