@@ -16,8 +16,10 @@ class CityInfo extends Component {
             < PostAddButton cityId={each._id} />
             </div>
           </div>
-          <div className="imageDiv">
-            <img src={each.image_url} />
+          <div className="imageDiv" style={ {
+            background: "url('" + each.image_url + "') no-repeat center center",
+            backgroundSize: "cover"
+          } }>
           </div>
         </div>
       )}
