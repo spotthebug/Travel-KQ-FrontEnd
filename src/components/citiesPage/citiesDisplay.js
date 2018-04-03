@@ -8,18 +8,26 @@ class CitiesDisplay extends Component {
 
   constructor(props) {
     super(props);
-    this.state= { cities: [] }
+    this.state= { cities: [], posts: [] }
 
     this.show = this.show.bind(this);
 
   }
 
   componentDidMount() {
-    axios.get('https://www.reddit.com/r/cats.json')
+    axios.get('https://travel-kingqueens.herokuapp.com/api/cities')
       .then(res => {
-        const cities = res.data.data.children.map(obj => obj.data)
+        console.log("this is cities", res.data)
+        const cities = res.data.map(obj => obj)
         this.setState({ cities });
       })
+
+      axios.get('https://travel-kingqueens.herokuapp.com/api/posts')
+        .then(res => {
+          console.log("this is posts", res.data)
+          const posts = res.data.map(obj => obj)
+          this.setState({ posts });
+        })
   }
 
   render() {
@@ -27,10 +35,10 @@ class CitiesDisplay extends Component {
       return (
         <div className="citiesdisplay">
           <div className="sidebar">
-            <CitiesList cities={this.state.cities} show={this.show}/>
+            <CitiesList cities={this.state.cities} posts={this.state.posts} show={this.show}/>
           </div>
           <div className="cityPage">
-            <CityPage data={this.state.cities} />
+            <CityPage cities={this.state.cities} posts={this.state.posts}/>
           </div>
         </div>
       );
@@ -41,11 +49,21 @@ class CitiesDisplay extends Component {
 
   show(id) {
     let showitem = document.getElementById(id)
-    let hide = document.querySelectorAll('.title')
+    let hide = document.querySelectorAll('.cityInfo')
     hide.forEach(item => {
       item.style.display = "none"
     });
-    showitem.style.display = "block"
+    showitem.style.display = "flex"
+
+    let classId = ".city" + id
+    let showPosts = document.querySelectorAll(classId)
+    let hidePosts = document.querySelectorAll('.cityPost')
+    hidePosts.forEach(item => {
+      item.style.display = "none"
+    })
+    showPosts.forEach(item => {
+      item.style.display = "flex"
+    })
   }
 }
 

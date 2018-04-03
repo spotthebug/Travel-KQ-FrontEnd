@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import NewPostModal from './newPostModal';
+import './postAddButton.css'
 
 class PostAddButton extends Component {
   render() {
     return (
-      <div>
-        <button>New Post</button>
+      <div className="postAddButton">
+        <p>add a post</p><button>+</button>
       </div>
     );
   }

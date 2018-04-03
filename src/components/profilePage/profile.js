@@ -6,25 +6,25 @@ import Header from '../Header';
 class Profile extends Component {
   constructor(props) {
     super(props);
-    this.state= { dogs: [] }
+    this.state= { posts: [] }
   }
 
   componentDidMount() {
-    axios.get('https://www.reddit.com/r/dogs.json')
+    axios.get('https://travel-kingqueens.herokuapp.com/api/posts')
       .then(res => {
-        const dogs = res.data.data.children.map(obj => obj.data)
-        console.log("GOG", dogs)
-        this.setState({ dogs: dogs });
-        console.log("meow dog", this.state)
+        console.log(res.data)
+        const posts = res.data.map(obj => obj)
+        this.setState({ posts: posts });
+        console.log("posts:", this.state)
       })
   }
 
   render() {
-    console.log("dogs?", this.state)
+    console.log("posts?", this.state)
     return (
       <div>
         <h1>Hello, user!!!</h1>
-        <UserPostList dogs={this.state}/>
+        <UserPostList posts={this.state}/>
       </div>
     );
   }

@@ -2,4 +2,25 @@
   margin: 2em;
   border: 1em solid rgb(255,220,230);
   padding: 2em 1.5em;
+  display: flex;
+}
+
+.postImg {
+  width: 100%;
+}
+
+.postBody {
+  padding: 1em;
+}
+
+.postBody h1 {
+  font-size: 1.2;
+  padding-bottom: .5em;
+}
+
+.postBody p {
+  font-weight: 300;
+  font-size: .85em;
+  font-family: sans-serif;
+  line-height: 1.5em;
 }
