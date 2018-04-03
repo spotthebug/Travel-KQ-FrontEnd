@@ -3,6 +3,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 import { Modal, Button } from 'react-bootstrap';
 import '../index.css';
+import Profile from './profilePage/profile'
 
 class ModalDisplay extends Component {
   constructor(props, context) {
@@ -26,7 +27,14 @@ class ModalDisplay extends Component {
 
 
   render() {
+
+    if (this.props.isAuthenticated) {
+           return <Profile />;
+       }
+       else {
+         console.log("or nahh");
     return (
+
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           Launch demo modal
@@ -38,7 +46,7 @@ class ModalDisplay extends Component {
             <SignUp />
             <hr />
             <h2> Login </h2>
-            <Login />
+            <Login authenticate={this.props.authenticate} isAuthenticated={this.props.isAuthenticated}/>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
@@ -46,7 +54,14 @@ class ModalDisplay extends Component {
         </Modal>
       </div>
     );
+
   }
+  }
+
+
+
+
+//this is the closing tag, do not delete this
 }
 
 

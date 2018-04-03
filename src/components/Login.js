@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import axios from 'axios';
+import Profile from './profilePage/profile'
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    
-    this.trial = this.trial.bind(this);
-    this.authenticate = this.authenticate.bind(this);
 
     this.state = {
       email: "",
@@ -17,25 +15,6 @@ class Login extends Component {
 
   }
 
-  trial(young){
-    console.log("we in the test of tests " + young);
-  }
-
-  authenticate(user) {
-    // SAMPLE ONLY -- You should insert the logic for your unique app here to request authentication!
-    let url = 'http://localhost:3001/login';
-    axios.post(url, user)
-        .then((res) => {
-            console.log(res);
-            let authenticated = res.data.user ? true : false;
-            console.log("authenticated == " + authenticated);
-            this.setState({ isAuthenticated: authenticated });
-            localStorage.setItem('logged-in', "true");
-
-        });
-    // Testing only. In prod we would let the request above update the state
-    // this.setState({ isAuthenticated: true, isAuthorized:true })
-}
 
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
@@ -56,13 +35,20 @@ class Login extends Component {
       username: "test",
       password: "123"
     };
-    this.authenticate(formData);
+    this.props.authenticate(formData);
   }
   // I took this line out cause of the disabled...not sure what its doing
   // <Button bsStyle="primary" block bsSize="large" disabled={!this.validateForm()} type="submit">
 
 
   render() {
+
+    if (this.props.isAuthenticated) {
+           return <Profile />;
+       }
+       else {
+         console.log("or nahh");
+
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
@@ -88,7 +74,8 @@ class Login extends Component {
         </form>
       </div>
     );
-  }
-}
+  };
+  };
+};
 
 export default Login;
