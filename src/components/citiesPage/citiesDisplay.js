@@ -48,7 +48,7 @@ class CitiesDisplay extends Component {
   }
 
   show(id) {
-    let showitem = document.getElementById(id)
+    let showitem = document.getElementById("cityinfo" + id)
     let hide = document.querySelectorAll('.cityInfo')
     hide.forEach(item => {
       item.style.display = "none"
