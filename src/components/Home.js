@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import '../index.css';
 import ArticlesList from './ArticlesList';
 import ImageCarousel from './Carousel';
-import ModalDisplay from './Modal';
+
+import SignUp from './SignUp';
+import Login from './Login';
 
 class Home extends Component {
   render() {
@@ -10,7 +12,8 @@ class Home extends Component {
       <div className="Home">
         <ImageCarousel />
         <ArticlesList />
-        <ModalDisplay />
+        <Login />
+        <SignUp />
       </div>
     );
   }

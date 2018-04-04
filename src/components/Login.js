@@ -5,6 +5,7 @@ class Login extends Component {
 
   constructor(props, context) {
     super(props, context);
+
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
@@ -39,7 +40,14 @@ class Login extends Component {
 
   render () {
     return (
-      <Modal show={this.state.show} onHide={this.handleClose}>
+
+      <div>
+      <Button bsStyle="primary" onClick={this.handleShow}>
+          Login
+        </Button>
+
+
+      <Modal show={this.state.show} onHide={this.handleClose} >
         <Modal.Body>
           <div className="Login">
             <form onSubmit={this.handleSubmit}>
@@ -69,6 +77,7 @@ class Login extends Component {
           <Button onClick={this.handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
+      </div>
     );
   }
 }
