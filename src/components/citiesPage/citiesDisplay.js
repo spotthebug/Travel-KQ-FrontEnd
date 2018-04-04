@@ -19,7 +19,7 @@ class CitiesDisplay extends Component {
       .then(res => {
         console.log("this is cities", res.data)
         const cities = res.data.map(obj => obj)
-        this.setState({ cities });
+        this.setState({ cities: cities });
       })
 
       axios.get('https://travel-kingqueens.herokuapp.com/api/posts')

@@ -7,7 +7,7 @@ import {
   Button
 } from "react-bootstrap";
 import axios from 'axios';
-
+import PostAddButton from './postAddButton';
 
 class NewPostModal extends Component {
   constructor(props, context){
@@ -107,9 +107,9 @@ class NewPostModal extends Component {
   render(){
     return (
       <div className='postForm'>
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          New Post
-        </Button>
+        <div className="postAddButton">
+          <PostAddButton onClick= {this.handleShow} />
+        </div>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>

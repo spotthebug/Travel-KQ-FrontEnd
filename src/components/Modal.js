@@ -3,6 +3,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 import { Modal, Button } from 'react-bootstrap';
 import '../index.css';
+import Header from './Header';
 
 class ModalDisplay extends Component {
   constructor(props, context) {
@@ -24,14 +25,9 @@ class ModalDisplay extends Component {
     this.setState({ show: true });
   }
 
-
   render() {
     return (
       <div>
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>
             <h2> Sign Up </h2>

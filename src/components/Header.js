@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import ModalDisplay from './Modal';
+import Login from './Login';
+import Login from './SignUp';
+
 
 class Header extends Component {
 
@@ -14,10 +18,10 @@ class Header extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
         <Nav>
-          <NavItem eventKey={1} href="/home">Home</NavItem>
+          <NavItem eventKey={1} href="/">Home</NavItem>
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/login" >
+          <NavItem eventKey={1} href="/login" onClick= {this.props.show}>
             Login
           </NavItem>
           <NavItem eventKey={2} href="/signup" >

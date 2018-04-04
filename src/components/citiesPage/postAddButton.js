@@ -5,7 +5,7 @@ class PostAddButton extends Component {
   render() {
     return (
       <div className="postAddButton">
-        <p>add a post</p><button>+</button>
+        <p>add a post</p><button onClick={this.props.handleShow}>+</button>
       </div>
     );
   }
