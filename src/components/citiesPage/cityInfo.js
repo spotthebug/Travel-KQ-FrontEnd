@@ -97,11 +97,11 @@ class CityInfo extends Component {
     return (
       <div>
       {this.props.cities.map(each =>
-        <div id={each._id} className="cityInfo" key={each._id}>
+        <div id={"cityinfo" + each._id} className="cityInfo" key={each._id}>
           <div className="country">
             <h2 className="title">{each.name}</h2>
             <h3 className="countryName">Country</h3>
-            <div className="postAddButton" id={each._id}>
+            <div className="postAddButton" id={"button" + each._id}>
             < PostAddButton cityId={each._id} handleShow={this.handleShow } />
             </div>
           </div>

@@ -10,12 +10,18 @@
 
 .countryName {
   font-size: 1.2em;
+  margin: 0;
+  padding: 0;
 }
 
 .cityInfo {
   display: none;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#cityinfo5abec9dfab3aa2000a0132a2 {
+  display: flex;
 }
 
 .cityInfo img {

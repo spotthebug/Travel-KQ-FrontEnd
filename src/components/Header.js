@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { Navbar, NavItem, Nav } from 'react-bootstrap';
 import Login from './Login';
 import SignUp from './SignUp';
+import "./Header.css"
+import ModalDisplay from './Modal';
+import Login from './Login';
+import Signup from './SignUp';
+
 
 
 class Header extends Component {
 
   render() {
     return(
+
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
@@ -37,9 +43,9 @@ class Header extends Component {
       </Navbar>
 
 
+
       );
   }
 }
 
 export default Header;
-

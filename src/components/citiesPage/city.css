@@ -1,9 +1,14 @@
-.cityListItem {
+button.cityListItem {
   padding: 2em 1em;
   margin: 1em;
-  background-color: rgb(255,220,230);
+  background-color: rgb(255,240,200);
   width: 90%;
   font-size: 1.3em;
+  text-align: center;
   font-weight: 500;
   border: none;
+}
+
+button.cityListItem:focus {
+  background-color: rgb(255,220,230);
 }

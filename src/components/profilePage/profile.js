@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./profile.css"
 import UserPostList from './userPostList';
-import Header from '../Header';
 
 class Profile extends Component {
   constructor(props) {
@@ -22,8 +22,8 @@ class Profile extends Component {
   render() {
     console.log("posts?", this.state)
     return (
-      <div>
-        <h1>Hello, user!!!</h1>
+      <div className="profilePage">
+        <h1 className="profilePageTitle">Hello, user!!!</h1>
         <UserPostList posts={this.state}/>
       </div>
     );
