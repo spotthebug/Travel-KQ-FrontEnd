@@ -20,10 +20,10 @@ class Header extends Component {
           <NavItem eventKey={1} href="/">Home</NavItem>
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={1}  onClick= {this.props.handleShow}>
+          <NavItem eventKey={1}  href="/login" onClick= {this.props.handleShow}>
             Login
           </NavItem>
-          <NavItem eventKey={2} href="/signup" >
+          <NavItem eventKey={2} href="/signup" onClick= {this.props.show} >
             SignUp
           </NavItem>
           <NavItem eventKey={3} href="/profile" >

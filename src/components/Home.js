@@ -12,8 +12,6 @@ class Home extends Component {
       <div className="Home">
         <ImageCarousel />
         <ArticlesList />
-        <Login />
-        <SignUp />
       </div>
     );
   }
