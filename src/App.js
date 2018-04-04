@@ -6,13 +6,15 @@ import CitiesDisplay from './components/citiesPage/citiesDisplay';
 import Login from './components/Login';
 import SignUp from './components/SignUp'
 import Profile from './components/profilePage/profile';
-
+import Header from './components/Header'
 class App extends Component {
 
   render() {
 
     return (
        <div className="App">
+               <Header />
+
          <div>
           <Route exact path='/' component={ Home } />
           <Route path='/signup' component={ SignUp } />
