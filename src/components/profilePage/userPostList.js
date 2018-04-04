@@ -7,7 +7,7 @@ class UserPostList extends Component {
       <div>
         <ul>
           {this.props.posts.posts.map(post =>
-            <UserPost posts={post}/>
+            <UserPost post={post}/>
           )}
         </ul>
       </div>
