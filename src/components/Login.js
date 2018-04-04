@@ -1,14 +1,26 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, ControlLabel, Modal } from "react-bootstrap";
 
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
+class Login extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
     this.state = {
+      show: false,
       email: "",
       password: ""
     };
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
   }
 
   validateForm() {
@@ -25,31 +37,40 @@ export default class Login extends Component {
     event.preventDefault();
   }
 
-  render() {
+  render () {
     return (
-      <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email1" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <FormControl
-              autoFocus
-              type="email"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup controlId="password1" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl
-              onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>
-          <Button bsStyle="primary" block bsSize="large" disabled={!this.validateForm()} type="submit"
-          >
-            Login
-          </Button>
-        </form>
-      </div>
+      <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal.Body>
+          <div className="Login">
+            <form onSubmit={this.handleSubmit}>
+              <FormGroup controlId="email1" bsSize="large">
+                <ControlLabel>Email</ControlLabel>
+                <FormControl
+                  autoFocus
+                  type="email"
+                  onChange={this.handleChange}
+                />
+              </FormGroup>
+              <FormGroup controlId="password1" bsSize="large">
+                <ControlLabel>Password</ControlLabel>
+                <FormControl
+                  onChange={this.handleChange}
+                  type="password"
+                />
+              </FormGroup>
+              <Button bsStyle="primary" block bsSize="large" disabled={!this.validateForm()} type="submit"
+              >
+                Login
+              </Button>
+            </form>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.handleClose}>Close</Button>
+        </Modal.Footer>
+      </Modal>
     );
   }
 }
+
+export default Login;
