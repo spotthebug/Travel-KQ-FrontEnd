@@ -44,7 +44,7 @@ class Login extends Component {
       <div>
       <Button bsStyle="primary" onClick={this.handleShow}>
           Login
-        </Button>
+      </Button>
 
 
       <Modal show={this.state.show} onHide={this.handleClose} >
